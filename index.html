@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="imgs\favicon.png" type="image/png">
+  <meta name="description" content="Сервіс аварійного відкриття замків у м. Київ та Київській обл. Майстри нашої служби роблять відкриття механізмів будь-якого рівня складності. Під час виконання робіт
+  фахівці використовують виключно сучасне обладнання, завдяки чому при відкритті не ушкоджується дверне полотно та деталі замків.
+  Визвати майстра - +380661455008, +380689375008 +380635305008.">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <title>OPENLOCK сервіс - служба аварійного відкриття замків.</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container-pupup" id="popup">
+    <div class="cookiesContent" id="cookiesPopup">
+      <button class="close" id="close">✖</button>
+      <img class="popup-img" src="imgs\favicon.png" alt="cookies-img" />
+      <p class="popup-info">Заявку прийнято, майстер незабаром зв'яжеться з вами!</p>
+      <button class="accept" id="accept">Продовжити</button>
+    </div>
+  </div>
+  <header class="header">
+
+
+    <div class="header-wrapper">
+      <div class="header__logo">
+        <span>OPENLOCK</span>
+        <svg class="logo-img" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.3871 4.73025 15.7635 5.4372 15.9192 6.20001C16.0297 6.74114 16.5579 7.09026 17.099 6.97979C17.6401 6.86933 17.9893 6.34111 17.8788 5.79999C17.6452 4.65591 17.0807 3.59545 16.2426 2.75736C15.1174 1.63214 13.5913 1 12 1C10.4087 1 8.88258 1.63214 7.75736 2.75736C6.63214 3.88258 6 5.4087 6 7V10H5C3.34315 10 2 11.3431 2 13V20C2 21.6569 3.34315 23 5 23H19C20.6569 23 22 21.6569 22 20V13C22 11.3431 20.6569 10 19 10H8V7C8 5.93913 8.42143 4.92172 9.17157 4.17157ZM5 12C4.44772 12 4 12.4477 4 13V20C4 20.5523 4.44772 21 5 21H19C19.5523 21 20 20.5523 20 20V13C20 12.4477 19.5523 12 19 12H5Z"
+            fill="black" />
+        </svg>
+        </svg>
+      </div>
+      <nav class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__menu-element"><a href="#general">Головна</a></li>
+          <li class="header__menu-element"><a href="#advnt">Переваги</a></li>
+          <li class="header__menu-element"><a href="#info">Ціни</a></li>
+          <li class="header__menu-element"><a href="#faq">Про нас</a></li>
+
+        </ul>
+      </nav>
+      <div class="header__info-right">
+        <div class="header__info-wrapper">
+          <div class="header__info">
+            <img src="imgs/location.svg" alt="">
+            <span>Київ, Київська обл.</span>
+          </div>
+          <div class="header__info">
+            <img src="imgs/time.svg" alt="">
+            <span>24/7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hamburger-menu">
+      <input type="number" id="menu__toggle" type="checkbox" />
+      <label class="menu__btn" for="menu__toggle">
+        <span></span>
+      </label>
+      <div class="menu__box">
+        <div class="header__logo">
+          <span>OPENLOCK</span>
+          <svg class="logo-img-mobile" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.3871 4.73025 15.7635 5.4372 15.9192 6.20001C16.0297 6.74114 16.5579 7.09026 17.099 6.97979C17.6401 6.86933 17.9893 6.34111 17.8788 5.79999C17.6452 4.65591 17.0807 3.59545 16.2426 2.75736C15.1174 1.63214 13.5913 1 12 1C10.4087 1 8.88258 1.63214 7.75736 2.75736C6.63214 3.88258 6 5.4087 6 7V10H5C3.34315 10 2 11.3431 2 13V20C2 21.6569 3.34315 23 5 23H19C20.6569 23 22 21.6569 22 20V13C22 11.3431 20.6569 10 19 10H8V7C8 5.93913 8.42143 4.92172 9.17157 4.17157ZM5 12C4.44772 12 4 12.4477 4 13V20C4 20.5523 4.44772 21 5 21H19C19.5523 21 20 20.5523 20 20V13C20 12.4477 19.5523 12 19 12H5Z"
+              fill="black" />
+          </svg>
+        </div>
+        <ul>
+          <li><a class="menu__item" href="#general">Головна</a></li>
+          <li><a class="menu__item" href="#advnt">Переваги</a></li>
+          <li><a class="menu__item" href="#info">Ціни</a></li>
+          <li><a class="menu__item" href="#faq">Про нас</a></li>
+
+        </ul>
+
+        <div class="menu__flex-mobile">
+          <div class="header__info-mobile">
+            <img src="imgs/location.svg" alt="">
+            <span>Київ, Київська обл.</span>
+          </div>
+          <div class="header__info-mobile">
+            <img src="imgs/time.svg" alt="">
+            <span>24/7</span>
+          </div>
+        </div>
+        <div class="header-mobile">
+          <p class="mobile-description">Натисніть на номер щоб зателефонувати</p>
+          <p class="full__wrapper-mobile-btn"><img src="imgs\vodafone-logo.svg" alt="vodofone logo"><a
+              href="tel:+380661455008">+ 38 (066) 145-50-08</a></p>
+          <p class="full__wrapper-mobile-btn"><img src="imgs\lifecell-logo.svg" alt="lifecell logo"><a
+              href="tel:+380689375008">+ 38 (068) 937-50-08</a></p>
+          <p class="full__wrapper-mobile-btn"><img src="imgs\kyivstar-logo.svg" alt="kyivstar logo"><a
+              href="tel:+380635305008">+ 38 (063) 530-50-08</a></p>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </header>
+  <main>
+    <section id="general" class="main">
+      <div class="main-wrapper">
+        <div class="main-flex">
+
+          <div class="maim-img-wrapper">
+            <img src="imgs\1.png" alt="">
+          </div>
+          <div class="main-text-wrapper">
+            <p class="main-text">OPENLOCK SERVICE</p>
+            <p class="main-description-text">
+              Сервіс аварійного відкриття замків у Київі та Київській області. Майстри нашої служби роблять відкриття механізмів будь-якого
+              рівня складності. Під час виконання робіт
+              фахівці використовують виключно сучасне обладнання, завдяки чому при відкритті не ушкоджується дверне
+              полотно та деталі замків.
+            </p>
+            <form class="main-buttons">
+              <input placeholder="НОМЕР ТЕЛЕФОНУ" id="fname" class="text-button"/>
+              <input type="button" id="add_button" value="ЗАМОВИТИ ДЗВІНОК" id="add_button" class="main-button"/>
+              <div class="response"></div>
+            </form>
+            <div class="response two"></div>
+            <div class="full__left-btn_wrapper">
+              <div class="full__wrapper-mobile">
+                <p class="mobile-description">Натисніть на номер щоб зателефонувати!</p>
+                <p class="full__wrapper-mobile-btn"><img src="imgs\vodafone-logo.svg" alt="vodofone logo"><a
+                    href="tel:+380661455008">+ 38 (066) 145-50-08</a></p>
+                <p class="full__wrapper-mobile-btn"><img src="imgs\lifecell-logo.svg" alt="lifecell logo"><a
+                    href="tel:+380689375008">+ 38 (068) 937-50-08</a></p>
+                <p class="full__wrapper-mobile-btn"><img src="imgs\kyivstar-logo.svg" alt="kyivstar logo"><a
+                    href="tel:+380635305008">+ 38 (063) 530-50-08</a></p>
+                <div class="messegers-btns">
+                  <p class="mobile-description">Натисніть щоб написати у наш месенджер!</p>
+                  <div class="messagers-flex">
+                    <a href="https://wa.me/+380635305008" class="massagers-icons-wrapper" href="">
+                      <svg class="massagers-icons" massagers-icons width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_231_6)">
+                        <path d="M128 131H671V669H128V131Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M399.884 0C179.371 0 0 179.421 0 399.996C0 487.474 28.2107 568.601 76.1668 634.449L26.3265 783.063L180.074 733.926C243.31 775.783 318.774 800 400.116 800C620.629 800 800 620.572 800 400.004C800 179.428 620.629 0.00661214 400.116 0.00661214L399.884 0ZM288.214 203.18C280.458 184.605 274.58 183.901 262.83 183.423C258.829 183.191 254.37 182.959 249.427 182.959C234.141 182.959 218.158 187.425 208.517 197.301C196.767 209.293 167.614 237.273 167.614 294.653C167.614 352.034 209.46 407.529 215.099 415.294C220.977 423.045 296.68 542.505 414.221 591.192C506.139 629.286 533.415 625.755 554.334 621.289C584.894 614.705 623.217 592.121 632.857 564.851C642.498 537.568 642.497 514.286 639.671 509.349C636.851 504.411 629.088 501.597 617.338 495.71C605.588 489.83 548.456 461.611 537.641 457.848C527.059 453.853 516.954 455.266 508.966 466.555C497.68 482.311 486.634 498.305 477.697 507.942C470.644 515.468 459.119 516.41 449.485 512.408C436.554 507.006 400.355 494.296 355.683 454.556C321.123 423.756 297.616 385.429 290.802 373.908C283.981 362.154 290.098 355.325 295.499 348.981C301.377 341.687 307.017 336.517 312.896 329.695C318.774 322.879 322.065 319.348 325.827 311.351C329.828 303.593 327.001 295.596 324.181 289.716C321.361 283.836 297.854 226.455 288.214 203.18Z" fill="#67C15E"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_231_6">
+                        <rect width="800" height="800" fill="white"/>
+                        </clipPath>
+                        </defs>
+                      </svg>
+                    </a>
+                    <a href="https://t.me/+380635305008" class="massagers-icons-wrapper" href="">
+                      <svg class="massagers-icons" width="800" height="800" viewBox="0 0 800 800" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_231_10)">
+                          <path
+                            d="M400 800C620.914 800 800 620.914 800 400C800 179.086 620.914 0 400 0C179.086 0 0 179.086 0 400C0 620.914 179.086 800 400 800Z"
+                            fill="url(#paint0_linear_231_10)" />
+                          <path
+                            d="M599.617 234.537C603.176 211.523 581.302 193.359 560.846 202.343L153.42 381.28C138.751 387.723 139.824 409.951 155.038 414.797L239.058 441.563C255.096 446.672 272.459 444.029 286.464 434.351L475.896 303.437C481.608 299.489 487.835 307.614 482.953 312.646L346.596 453.274C333.369 466.917 335.994 490.034 351.906 500.014L504.572 595.78C521.695 606.52 543.723 595.732 546.925 575.032L599.617 234.537Z"
+                            fill="white" />
+                        </g>
+                        <defs>
+                          <linearGradient id="paint0_linear_231_10" x1="400" y1="0" x2="400" y2="800"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#37BBFE" />
+                            <stop offset="1" stop-color="#007DBB" />
+                          </linearGradient>
+                          <clipPath id="clip0_231_10">
+                            <rect width="800" height="800" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </a>
+                    <a href="viber://chat?number=+380635305008" class="massagers-icons-wrapper" href="">
+                      <svg class="massagers-icons" width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_231_2)">
+                          <path
+                            d="M427.211 260.617C435.811 260.339 444.379 261.746 452.384 264.75C460.388 267.754 467.659 272.291 473.743 278.079C479.828 283.867 484.597 290.783 487.755 298.398C490.912 306.012 492.391 314.163 492.099 322.344M412.559 206.855C430.692 206.836 448.641 210.319 465.317 217.094C481.994 223.868 497.051 233.793 509.576 246.267C522.101 258.74 531.834 273.503 538.185 289.66C544.535 305.818 547.371 323.034 546.521 340.264M393.721 155.084C422.013 154.458 450.13 159.466 476.268 169.785C502.406 180.105 525.988 195.508 545.5 215.007C565.013 234.506 580.024 257.67 589.572 283.013C599.12 308.356 602.993 335.317 600.944 362.168"
+                            stroke="#665CA7" stroke-width="10" stroke-linecap="round" />
+                          <path
+                            d="M466.981 435.841C480.935 418.584 497.681 415.929 517.217 427.877L592.571 481.639C603.734 494.913 598.85 513.498 577.919 537.392C556.987 561.286 537.451 571.242 519.31 567.26C445.352 551.33 374.184 511.506 305.808 447.788C237.431 384.07 194.87 315.043 178.125 240.705C178.125 214.156 195.568 191.589 230.454 173.005C248.595 161.058 263.945 164.376 276.503 182.961L328.832 252.652C337.205 268.582 332.321 283.184 314.18 296.458C232.547 326.326 420.932 519.471 466.981 435.841ZM63.0011 352.211C63.0011 507.524 92.3054 541.374 138.355 587.171C153.007 601.11 205.336 625.004 217.895 625.004V762.396C217.895 770.361 226.268 776.334 234.64 768.369L345.578 642.925L400 644.916C701.415 644.916 736.999 533.409 736.999 352.211C736.999 171.014 701.415 59.5072 400 59.5072C98.5848 59.5072 63.0011 171.014 63.0011 352.211ZM0.206299 352.211C0.206299 101.322 115.33 -0.228394 400 -0.228394C684.67 -0.228394 799.794 101.322 799.794 352.211C799.794 603.101 684.67 704.651 400 704.651C379.068 704.651 362.323 704.651 333.019 700.669L253.479 786.29C238.827 802.219 194.87 808.193 194.87 760.405V676.775C182.311 676.775 153.007 664.828 113.237 640.933C73.4669 615.048 0.206299 553.321 0.206299 352.211Z"
+                            fill="#665CA7" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_231_2">
+                            <rect width="800" height="800" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="text-main-description"><span>Виїзд майстра: 500 грн.</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="decor-2">
+          <p>ЯКІСТЬ</p>
+          <p>ШВИДКІСТЬ</p>
+          <p>ЦІНА</p>
+        </div>
+      
+      </div>
+    </section>
+    <section id="advnt" class="services-description">
+      <div class="serices-wrapper">
+        <p class="services-main-text">Ми надаємо висококваліфіційну допомогу!</p>
+        <div class="services-wrapper-flex">
+
+          <div class="services-description-item">
+
+            <div id="color3" class="services-description-item-img">
+              <svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M445.969 73.1678L450.13 77.0606L761 381.89L727.659 415.739L684.852 373.772L684.876 695.526C684.876 720.545 665.47 741.054 640.857 742.858L637.313 743H161.687C136.621 743 116.074 723.631 114.243 699.063L114.124 695.526L114.1 373.796L71.3414 415.739L38 381.89L348.537 77.3692C375.005 50.4041 417.693 48.9086 445.969 73.1678ZM384.47 108.868L382.187 110.933L161.663 327.153L161.687 695.526L280.57 695.502L280.593 458.157C280.593 433.138 299.999 412.63 324.613 410.802L328.156 410.683H470.844C495.91 410.683 516.457 430.053 518.288 454.62L518.407 458.157L518.383 695.502L637.313 695.526L637.29 327.129L416.147 110.269C407.491 101.794 393.983 101.272 384.47 108.868ZM470.844 458.157H328.156L328.132 695.502H470.82L470.844 458.157Z"
+                  fill="white" />
+              </svg>
+            </div>
+            <p>Відкрити та відремонтувати двері в вашу домівку.</p>
+          </div>
+          <div class="services-description-item">
+            <div id="color2" class="services-description-item-img">
+              <svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_215_145)">
+                  <path
+                    d="M773.663 347.373H736.685L647.539 192.023H316.705L192.23 347.373H39.1596C14.9893 347.373 -3.39666 368.959 0.531463 392.82L24.0815 536.292C24.0815 537.427 25.0096 538.461 26.1471 538.461H126.752C131.916 493.528 170.133 458.514 216.406 458.514C262.68 458.514 300.9 493.528 306.064 538.461H536.61C541.774 493.528 579.994 458.514 626.267 458.514C672.541 458.514 710.758 493.528 715.925 538.461H773.664C788.227 538.461 800.002 526.684 800.002 512.12V373.709C800 359.148 788.227 347.373 773.663 347.373ZM512.335 253.998H602.813L658.903 347.373L660.863 353.169L661.281 354.706H512.335V253.998ZM281.021 354.567L283.956 347.373L358.642 253.998H441.48V354.708H324.902L281.021 354.567Z"
+                    fill="white" />
+                  <path
+                    d="M216.406 489.503C187.177 489.503 162.903 510.678 158.05 538.463C157.428 541.766 157.116 545.278 157.116 548.792C157.116 581.431 183.663 607.977 216.405 607.977C249.15 607.977 275.695 581.43 275.695 548.792C275.695 545.28 275.386 541.767 274.767 538.463C269.913 510.677 245.639 489.503 216.406 489.503Z"
+                    fill="white" />
+                  <path
+                    d="M626.266 489.503C597.033 489.503 572.759 510.678 567.906 538.463C567.284 541.766 566.975 545.278 566.975 548.792C566.975 581.431 593.519 607.977 626.264 607.977C659.006 607.977 685.552 581.43 685.552 548.792C685.552 545.28 685.242 541.767 684.624 538.463C679.77 510.677 655.497 489.503 626.266 489.503Z"
+                    fill="white" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_215_145">
+                    <rect width="800" height="800" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <p>Відкрити та відремонтувати замок автомобіля.</p>
+          </div>
+          <div class="services-description-item">
+            <div id="color1" class="services-description-item-img">
+              <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.3871 4.73025 15.7635 5.4372 15.9192 6.20001C16.0297 6.74114 16.5579 7.09026 17.099 6.97979C17.6401 6.86933 17.9893 6.34111 17.8788 5.79999C17.6452 4.65591 17.0807 3.59545 16.2426 2.75736C15.1174 1.63214 13.5913 1 12 1C10.4087 1 8.88258 1.63214 7.75736 2.75736C6.63214 3.88258 6 5.4087 6 7V10H5C3.34315 10 2 11.3431 2 13V20C2 21.6569 3.34315 23 5 23H19C20.6569 23 22 21.6569 22 20V13C22 11.3431 20.6569 10 19 10H8V7C8 5.93913 8.42143 4.92172 9.17157 4.17157ZM5 12C4.44772 12 4 12.4477 4 13V20C4 20.5523 4.44772 21 5 21H19C19.5523 21 20 20.5523 20 20V13C20 12.4477 19.5523 12 19 12H5Z"
+                  fill="white" />
+              </svg>
+            </div>
+            <p>Відкрити сейф або щось інше.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mobile-about">
+      <div class="mobile-about-wrapper">
+        <div class="mobile-about-flex">
+          <div class="mobile-about-img-wrapper">
+            <img src="imgs\2.png" alt="" class="mobile-about-img">
+          </div>
+
+          <div class="mobile-about-text">
+            <p class="mobile-about-text-main">Наші майстри прибудуть до вас протягом 20-30 хвилин</p>
+            <p class="mobile-about-text-description">Вам потрібно лише зателефонувати до нас, і ми відразу ж надішлемо
+              майстрів на вашу адресу</p>
+            <div class="mobile-about-text-btn-wrapper">
+              <a href="#general" class="main-button">Перейти до номерів</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="mobile-about-decor">
+        </div>
+      </div>
+    </section>
+    <section id="info" class="price-table">
+      <p class="price-table-label">Тарифи</p>
+      <p class="price-table-discription">Ми пропонуємо вигідні умови обслуговування.</p>
+      <table style="text-align: center;" class="table-wrapper">
+        <tr>
+          <td class="td-description">відкриття замку дверей (залежно від складності замку)</th>
+          <td class="td-price td-border">Від 300 грн</th>
+        </tr>
+        <tr>
+          <td class="td-description">відкриття замку автомобіля (залежно від марки авто)</td>
+          <td class="td-price">Від 600 грн</td>
+        </tr>
+        <tr>
+          <td class="td-description">відкриття сейфа (залежно від складності замку)</td>
+          <td class="td-price">Від 300 грн</td>
+        </tr>
+        <tr>
+          <td class="td-description">Ремонт замку в металевих дверях від</th>
+          <td class="td-price">250 грн</th>
+        </tr>
+        <tr>
+          <td class="td-description">Ремонт сейфу</td>
+          <td class="td-price">350 грн</td>
+        </tr>
+        <tr>
+          <td class="td-description">Ремонт замку запалювання (залежно від марки авто)</td>
+          <td class="td-price">Від 700 грн</td>
+        </tr>
+        <tr>
+          <td class="td-description"> Змінити серцевину замку (без вартості серцевини)</th>
+          <td class="td-price">Від 150 грн</th>
+        </tr>
+        <tr>
+          <td class="td-description">Встановлення нового замку у двері (без вартості замку)</td>
+          <td class="td-price">Від 250 грн</td>
+        </tr>
+        <tr>
+          <td class="td-description">Заміна замка на аналогічний (без вартості замка)</td>
+          <td class="td-price">Від 650 грн</td>
+        </tr>
+        <tr>
+          <td class="td-description">Врізання дверного замка у нове місце (без вартості замка)</th>
+          <td class="td-price">Від 700 грн</th>
+        </tr>
+        <tr>
+          <td class="td-description">Вставити вічко (без вартості вічка)</td>
+          <td class="td-price">Від 300 грн</td>
+        </tr>
+        <tr>
+          <td class="td-description">Замінити ручки замка дверей (без вартості ручки)</td>
+          <td class="td-price">Від 250 грн</td>
+        </tr>
+        <tr>
+          <td class="td-description">Хибний виклик</th>
+          <td class="td-price">500 грн</th>
+        </tr>
+        <tr>
+          <td class="td-description">Виїзд майстра або простій майстра за 1 годину</td>
+          <td class="td-price">500 грн</td>
+        </tr>
+        <tr>
+          <td class="td-description">Виїзд за межі вкзазаних міст за 1 км</td>
+          <td class="td-price td-border-reverse">16 грн</td>
+        </tr>
+      </table>
+    </section>
+    <section id="faq" class="about-comp">
+      <p class="about-comp-label">ПРО НАС ТА ПЕРЕВАГИ НАШОГО СЕРВІСУ</p>
+      <div class="about-wrapper">
+        <div class="about-flex">
+
+          <div id="color4" class="services-description-item-img">
+            <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.3871 4.73025 15.7635 5.4372 15.9192 6.20001C16.0297 6.74114 16.5579 7.09026 17.099 6.97979C17.6401 6.86933 17.9893 6.34111 17.8788 5.79999C17.6452 4.65591 17.0807 3.59545 16.2426 2.75736C15.1174 1.63214 13.5913 1 12 1C10.4087 1 8.88258 1.63214 7.75736 2.75736C6.63214 3.88258 6 5.4087 6 7V10H5C3.34315 10 2 11.3431 2 13V20C2 21.6569 3.34315 23 5 23H19C20.6569 23 22 21.6569 22 20V13C22 11.3431 20.6569 10 19 10H8V7C8 5.93913 8.42143 4.92172 9.17157 4.17157ZM5 12C4.44772 12 4 12.4477 4 13V20C4 20.5523 4.44772 21 5 21H19C19.5523 21 20 20.5523 20 20V13C20 12.4477 19.5523 12 19 12H5Z"
+                fill="white" />
+            </svg>
+          </div>
+          <div class="about-text">
+            <p class="about-text-main">Наші майстри мають досвід понад 6 років активної роботи.</p>
+            <p class="about-text-description">У нашій компанії працюють досвідчені та кваліфіковані майстри, які за
+              допомогою якісних професійних інструменів швидко та без пошкоджень надають послуги екстреного відкриття
+              замків.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-wrapper">
+        <div class="about-flex">
+
+          <div id="color5" class="services-description-item-img">
+            <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.99995 22H15.9999C20.0199 22 20.7399 20.39 20.9499 18.43L21.6999 10.43C21.9699 7.99 21.2699 6 16.9999 6H6.99995C2.72995 6 2.02995 7.99 2.29995 10.43L3.04995 18.43C3.25995 20.39 3.97995 22 7.99995 22Z"
+                stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M8 6V5.2C8 3.43 8 2 11.2 2H12.8C16 2 16 3.43 16 5.2V6" stroke="white" stroke-width="1.5"
+                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M14 13V14C14 14.01 14 14.01 14 14.02C14 15.11 13.99 16 12 16C10.02 16 10 15.12 10 14.03V13C10 12 10 12 11 12H13C14 12 14 12 14 13Z"
+                stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M21.65 11C19.34 12.68 16.7 13.68 14 14.02" stroke="white" stroke-width="1.5"
+                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M2.62 11.27C4.87 12.81 7.41 13.74 10 14.03" stroke="white" stroke-width="1.5"
+                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="about-text">
+            <p class="about-text-main">Ми робимо відкриття замків без пошкоджень.</p>
+            <p class="about-text-description">Великий досвід, висока кваліфікація і сучасний інструмент дозволяє
+              акуратно розкрити будь-який замок. Після роботи наших майстрів не залишається відколів або подряпин.
+              Механізм замків залишається в цілості.</p>
+          </div>
+        </div>
+        <div class="mobile-about-decor">
+        </div>
+      </div>
+      <div class="about-flex-pc flex-1">
+        <div class="about-flex-little">
+          <div class="service-description-item-img-wrapper">
+            <div id="color6" class="services-description-item-img little">
+              <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7.99995 22H15.9999C20.0199 22 20.7399 20.39 20.9499 18.43L21.6999 10.43C21.9699 7.99 21.2699 6 16.9999 6H6.99995C2.72995 6 2.02995 7.99 2.29995 10.43L3.04995 18.43C3.25995 20.39 3.97995 22 7.99995 22Z"
+                  stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M8 6V5.2C8 3.43 8 2 11.2 2H12.8C16 2 16 3.43 16 5.2V6" stroke="white" stroke-width="1.5"
+                  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M14 13V14C14 14.01 14 14.01 14 14.02C14 15.11 13.99 16 12 16C10.02 16 10 15.12 10 14.03V13C10 12 10 12 11 12H13C14 12 14 12 14 13Z"
+                  stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M21.65 11C19.34 12.68 16.7 13.68 14 14.02" stroke="white" stroke-width="1.5"
+                  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2.62 11.27C4.87 12.81 7.41 13.74 10 14.03" stroke="white" stroke-width="1.5"
+                  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="about-text">
+            <p class="about-text-description little">Ми гарантуємо якість наших послуг та обробку заявок у строк.</p>
+          </div>
+        </div>
+        <div class="about-flex-little">
+          <div class="service-description-item-img-wrapper">
+            <div id="color7" class="services-description-item-img little">
+
+              <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21.97 18.33C21.97 18.69 21.89 19.06 21.72 19.42C21.55 19.78 21.33 20.12 21.04 20.44C20.55 20.98 20.01 21.37 19.4 21.62C18.8 21.87 18.15 22 17.45 22C16.43 22 15.34 21.76 14.19 21.27C13.04 20.78 11.89 20.12 10.75 19.29C9.6 18.45 8.51 17.52 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.27 13.75 11.79 14.24 12.32 14.69C12.84 15.13 13.27 15.43 13.61 15.61C13.66 15.63 13.72 15.66 13.79 15.69C13.87 15.72 13.95 15.73 14.04 15.73C14.21 15.73 14.34 15.67 14.45 15.56L15.21 14.81C15.46 14.56 15.7 14.37 15.93 14.25C16.16 14.11 16.39 14.04 16.64 14.04C16.83 14.04 17.03 14.08 17.25 14.17C17.47 14.26 17.7 14.39 17.95 14.56L21.26 16.91C21.52 17.09 21.7 17.3 21.81 17.55C21.91 17.8 21.97 18.05 21.97 18.33Z"
+                  stroke="white" stroke-width="1.5" stroke-miterlimit="10" />
+              </svg>
+            </div>
+          </div>
+          <div class="about-text">
+            <p class="about-text-description little">Ми працюємо 24/7 і готові допомогти у будь-який час.</p>
+          </div>
+        </div>
+        <div class="about-flex-little">
+          <div class="service-description-item-img-wrapper">
+            <div id="color8" class="services-description-item-img little">
+              <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.97 22H4.96997C1.96997 22 1.96997 20.65 1.96997 19V18C1.96997 17.45 2.41997 17 2.96997 17H20.97C21.52 17 21.97 17.45 21.97 18V19C21.97 20.65 21.97 22 18.97 22Z"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M20.72 13V17H3.27002V13C3.27002 9.16 5.98002 5.95 9.59002 5.18C10.13 5.06 10.69 5 11.27 5H12.72C13.3 5 13.87 5.06 14.41 5.18C18.02 5.96 20.72 9.16 20.72 13Z"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M14.5 4.5C14.5 4.74 14.47 4.96 14.41 5.18C13.87 5.06 13.3 5 12.72 5H11.27C10.69 5 10.13 5.06 9.59 5.18C9.53 4.96 9.5 4.74 9.5 4.5C9.5 3.12 10.62 2 12 2C13.38 2 14.5 3.12 14.5 4.5Z"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15 11H9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="about-text">
+            <p class="about-text-description little">Ми можемо прибути на об'єкт протягом 20-30 хвилин після Вашого
+              замовлення.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-flex-pc flex-2">
+        <div class="about-flex-little">
+          <div class="service-description-item-img-wrapper">
+            <div id="color9" class="services-description-item-img little">
+              <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 10V8C6 4.69 7 2 12 2C17 2 18 4.69 18 8V10" stroke="white" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M12 18.5C13.3807 18.5 14.5 17.3807 14.5 16C14.5 14.6193 13.3807 13.5 12 13.5C10.6193 13.5 9.5 14.6193 9.5 16C9.5 17.3807 10.6193 18.5 12 18.5Z"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 22H7C3 22 2 21 2 17V15C2 11 3 10 7 10H17C21 10 22 11 22 15V17C22 21 21 22 17 22Z"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="about-text">
+            <p class="about-text-description little">Ми вживаємо всіх необхідних заходів для захисту вашої особистої
+              інформації та безпеки.</p>
+          </div>
+        </div>
+        <div class="about-flex-little">
+          <div class="service-description-item-img-wrapper">
+            <div id="color10" class="services-description-item-img little">
+
+              <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.46997 9C7.40297 9 8.96997 7.433 8.96997 5.5C8.96997 3.567 7.40297 2 5.46997 2C3.53697 2 1.96997 3.567 1.96997 5.5C1.96997 7.433 3.53697 9 5.46997 9Z"
+                  stroke="white" stroke-width="1.5" />
+                <path
+                  d="M16.97 15H19.97C21.07 15 21.97 15.9 21.97 17V20C21.97 21.1 21.07 22 19.97 22H16.97C15.87 22 14.97 21.1 14.97 20V17C14.97 15.9 15.87 15 16.97 15Z"
+                  stroke="white" stroke-width="1.5" />
+                <path
+                  d="M11.9999 5H14.6799C16.5299 5 17.3899 7.29 15.9999 8.51L8.00995 15.5C6.61995 16.71 7.47994 19 9.31994 19H11.9999"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.48622 5.5H5.49777" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M18.4862 18.5H18.4978" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="about-text">
+            <p class="about-text-description little">Вартість послуги ремонту замка включає виклик майстра, виїзд його
+              на об'єкт, заміну деталей замка або ж всього замка повністю.</p>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-info">
+          <div class="footer-name">OPENLOCK SERVICE</div>
+          <div class="footer-ul-wrapper">
+            <li><a href="#general">ГОЛОВНА</a></li>
+            <li><a href="#advnt">ПЕРЕВАГИ</a></li>
+            <li><a href="#info">ПОСЛУГИ</a></li>
+            <li><a href="#faq">ПРО НАС</a></li>
+          </div>
+          <div class="footer-author">Site developer/designer - <a class="author-href"
+              href="https://t.me/DeathBySexy">Andrey Dvugroshev</a></div>
+        </div>
+      </footer>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
